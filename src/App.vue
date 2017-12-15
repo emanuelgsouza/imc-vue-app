@@ -1,6 +1,6 @@
 <script>
-  import { isEmpty } from 'lodash'
-  import { imcCalc } from './domains/calculus'
+  import { isEmpty, get } from 'lodash'
+  import { imcCalc, ideialWeight } from './domains/calculus'
   import loadCategory from './domains/categories/load-category'
 
   export default {
@@ -27,6 +27,19 @@
         }
 
         return null
+      },
+      loadIdealWeight () {
+        if (this.canLoadResult) {
+          return ideialWeight(this.heigth, this.genre)
+        }
+
+        return {}
+      },
+      minWeightIdeal () {
+        return get(this.loadIdealWeight, 'minWeightIdeal', '')
+      },
+      maxWeightIdeal () {
+        return get(this.loadIdealWeight, 'maxWeightIdeal', '')
       }
     }
   }
@@ -75,6 +88,7 @@
           <ul>
             <li> IMC: {{ resultImcCalc }} </li>
             <li> Categoria: {{ resultCategory }} </li>
+            <li> O seu peso ideial deve estar entre {{ minWeightIdeal }} e {{ maxWeightIdeal }} </li>
           </ul>
         </div>
 

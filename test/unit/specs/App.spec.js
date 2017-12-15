@@ -83,3 +83,95 @@ describe('App.vue - resultCategory computed', () => {
     expect(vm.resultCategory).toBe('Acima do peso')
   })
 })
+
+describe('App.vue - loadIdealWeight computed', () => {
+  it('Valor inicial de loadIdealWeight é objeto vazio', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    expect(vm.loadIdealWeight).toEqual({})
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for masculino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    const expected = {
+      minWeightIdeal: '59.82',
+      maxWeightIdeal: '76.27'
+    }
+
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    vm.genre = 'M'
+    expect(vm.loadIdealWeight).toEqual(expected)
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for feminino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    const expected = {
+      minWeightIdeal: '45.89',
+      maxWeightIdeal: '61.96'
+    }
+
+    vm.heigth = '1.55'
+    vm.weight = '60'
+    vm.genre = 'F'
+    expect(vm.loadIdealWeight).toEqual(expected)
+  })
+})
+
+describe('App.vue - minWeightIdeal computed', () => {
+  it('Valor inicial de minWeightIdeal é uma string vazia', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    expect(vm.minWeightIdeal).toBe('')
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for masculino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    vm.genre = 'M'
+    expect(vm.minWeightIdeal).toBe('59.82')
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for feminino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+
+    vm.heigth = '1.55'
+    vm.weight = '60'
+    vm.genre = 'F'
+    expect(vm.minWeightIdeal).toEqual('45.89')
+  })
+})
+
+describe('App.vue - maxWeightIdeal computed', () => {
+  it('Valor inicial de maxWeightIdeal é uma string vazia', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    expect(vm.maxWeightIdeal).toBe('')
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for masculino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    vm.genre = 'M'
+    expect(vm.maxWeightIdeal).toBe('76.27')
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for feminino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+
+    vm.heigth = '1.55'
+    vm.weight = '60'
+    vm.genre = 'F'
+    expect(vm.maxWeightIdeal).toEqual('61.96')
+  })
+})
