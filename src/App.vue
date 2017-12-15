@@ -58,12 +58,14 @@
 
           <div class="field">
             <label for="heigth" class="label"> Altura </label>
-            <input id="heigth" type="number" class="input" v-model="heigth" step="0.1" min="0">
+            <input id="heigth" type="number" class="input" v-model="heigth" step="0.1" min="0" placeholder="Ex.: 1.70">
+            <span class="help"> Digite sua altura no formato 0.00. Ex.: 1.7 </span>
           </div>
 
           <div class="field">
             <label for="heigth" class="label"> Peso </label>
-            <input id="weight" type="number" class="input" v-model="weight" step="0.1" min="0">
+            <input id="weight" type="number" class="input" v-model="weight" step="0.1" min="0" placeholder="Ex.: 80">
+            <span class="help"> Digite seu peso no formato 00.00. Ex.: 80 </span>
           </div>
         </div>
 
