@@ -24,11 +24,37 @@ describe('App.vue - resultImcCalc computed', () => {
     expect(vm.resultImcCalc).toBeNull()
   })
 
-  it('Quando heigth e weight forem preenchidos, resultImcCalc retorna 27.68', () => {
+  it('Quando heigth = 1.70 e weight = 80, resultImcCalc retorna 27.68', () => {
     const wrapper = mount(App)
     const vm = wrapper.vm
     vm.heigth = '1.70'
     vm.weight = '80'
+    expect(vm.resultImcCalc).toBe('27.68')
+  })
+
+  it('Quando heigth = 1.70 e weight = 90, resultImcCalc retorna 31.14', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    expect(vm.resultImcCalc).toBe('31.14')
+  })
+
+  it('Quando heigth = 1.70 e weight = 90, resultImcCalc retorna 31.14', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    vm.genre = 'M'
+    expect(vm.resultImcCalc).toBe('31.14')
+  })
+
+  it('Quando heigth = 1.70 e weight = 80 e o genero for masculino resultImcCalc retorna 27.68', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    vm.heigth = '1.70'
+    vm.weight = '80'
+    vm.genre = 'M'
     expect(vm.resultImcCalc).toBe('27.68')
   })
 })
@@ -38,6 +64,15 @@ describe('App.vue - resultCategory computed', () => {
     const wrapper = mount(App)
     const vm = wrapper.vm
     expect(vm.resultCategory).toBeNull()
+  })
+
+  it('Quando heigth e weight forem preenchidos e o genero for masculino', () => {
+    const wrapper = mount(App)
+    const vm = wrapper.vm
+    vm.heigth = '1.70'
+    vm.weight = '90'
+    vm.genre = 'M'
+    expect(vm.resultCategory).toBe('Obeso')
   })
 
   it('Quando heigth e weight forem preenchidos, resultCategory retorna Acima do peso', () => {

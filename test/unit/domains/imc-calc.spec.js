@@ -5,6 +5,10 @@ describe('Função que calcula IMC', () => {
     expect(imcCalc(80, 1.70)).toBe('27.68')
   })
 
+  it('Altura de 1,70m com peso de 90kg retorna 31.14', () => {
+    expect(imcCalc(90, 1.70)).toBe('31.14')
+  })
+
   it('Altura de 2m com peso de 100kg retorna 25.00', () => {
     expect(imcCalc(100, 2)).toBe('25.00')
   })

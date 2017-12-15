@@ -22,7 +22,7 @@
         return null
       },
       resultCategory () {
-        if (this.canLoadResult) {
+        if (this.canLoadResult && this.resultImcCalc) {
           return loadCategory(this.genre, this.resultImcCalc)
         }
 
@@ -44,6 +44,17 @@
           <p> O texto aonde se encontra sua demonstração está no <a href="https://medium.com">Medium</a> </p>
 
           <hr>
+
+          <div class="control">
+            <label class="radio">
+              <input type="radio" v-model="genre" value="M">
+              Masculino
+            </label>
+            <label class="radio">
+              <input type="radio" v-model="genre" value="F">
+              Feminino
+            </label>
+          </div>
 
           <div class="field">
             <label for="heigth" class="label"> Altura </label>
