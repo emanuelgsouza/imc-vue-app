@@ -59,12 +59,12 @@
           <hr>
 
           <div class="control">
-            <label class="radio">
-              <input type="radio" v-model="genre" value="M">
+            <label class="radio" for="masc">
+              <input id="masc" type="radio" v-model="genre" value="M">
               Masculino
             </label>
-            <label class="radio">
-              <input type="radio" v-model="genre" value="F">
+            <label for="fem" class="radio">
+              <input id="fem" type="radio" v-model="genre" value="F">
               Feminino
             </label>
           </div>
@@ -76,7 +76,7 @@
           </div>
 
           <div class="field">
-            <label for="heigth" class="label"> Peso </label>
+            <label for="weight" class="label"> Peso </label>
             <input id="weight" type="number" class="input" v-model="weight" step="0.1" min="0" placeholder="Ex.: 80">
             <span class="help"> Digite seu peso no formato 00.00. Ex.: 80 </span>
           </div>
@@ -106,5 +106,9 @@
 
   .notification {
     margin: 0 10px;
+  }
+
+  .help {
+    font-size: 16px;
   }
 </style>
