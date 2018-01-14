@@ -54,7 +54,7 @@
         <div class="box">
           <h1 class="title has-text-centered"> IMC APP </h1>
           <p> Esta pequena aplicação foi usada como demonstração de testes com Vue.js </p>
-          <p> O texto aonde se encontra sua demonstração está no <a href="https://medium.com">Medium</a> </p>
+          <p> O texto aonde se encontra sua demonstração está no <a href="https://medium.com/@Emanuel_G/fala-pequeno-gafanhoto-2ca732a4c281">Medium</a> </p>
 
           <hr>
 
